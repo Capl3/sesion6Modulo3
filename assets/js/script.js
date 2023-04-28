@@ -16,6 +16,8 @@
 /* Shift: elimina un elemto  a la primera posiscion del arrelgo */
 /* Pop: elimina un elemento a la última posición del arreglo */
 /* Splice: elimina un elemento o varios desde un elemnto indicado */
+/* Result es un complemento de respone que es la variable que capta el arreglo y lo despliega */
+/* JQ para hacer que se cree solo el AJAX */
 
 /* Endpoint: https://pokeapi.co/api/v2/pokemon/ */
 function consumoAPI() {
@@ -23,7 +25,12 @@ function consumoAPI() {
         type: "get",
         url: "https://pokeapi.co/api/v2/pokemon/",
         success: function (response) {
-            console.log(response)
+            response.results.pop();
+            console.log(response.results)
+            response.results.shift();
+            console.log(response.results)
+            response.results.unshift('Goku');
+            console.log(response.results)
 
         }
     });
